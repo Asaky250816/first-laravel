@@ -1,0 +1,15 @@
+# MySQLのデータファイルを除外
+docker/mysql/data/*
+
+# 環境変数ファイル
+.env
+
+# macOSのシステムファイル
+.DS_Store
+
+# IDEの設定ファイル
+.vscode/
+.idea/
+
+# ログファイル
+*.log
