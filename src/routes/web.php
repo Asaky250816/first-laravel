@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\TestController;
+
+Route::get('/', [TestController::class, 'index']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +18,18 @@ use App\Http\Controllers\HelloController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/', [TestController::class, 'index']);
-//Route::get('/test', [TestController::class, 'index']);
-//Route::get('/hello', [HelloController::class, 'index']);
+Route::get('/test', [TestController::class, 'index']);
+Route::get('/hello', [HelloController::class, 'index']);
 
-//Route::get('/test/{text}', [TestController::class, 'index']);
-//Route::get('/test/{text?}', [TestController::class, 'index']);
+Route::get('/test/{text}', [TestController::class, 'index']);
+Route::get('/test/{text?}', [TestController::class, 'index']);
 
-//Route::get('/test', [TestController::class, 'index']);
+Route::get('/test', [TestController::class, 'index']);
 
 Route::get('/test/{room}/{id}', function ($room, $id) {
     return 'roomが' . $room . 'でidは' . $id . 'です';
@@ -35,5 +38,6 @@ Route::get('/test/{room}/{id}', function ($room, $id) {
 Route::get('/test/{greeting?}', function ($greeting = 'Good morning') {
     return $greeting . 'おはようございま〜す';
 });
+*/
 
 
