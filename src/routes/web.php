@@ -3,9 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\MiddlewareController;
 
 Route::get('/', [TestController::class, 'index']);
-
+Route::post('/', [TestController::class, 'post']);
+Route::get('/middleware', [MiddlewareController::class, 'index']);
+Route::post('/middleware', [MiddlewareController::class, 'post'])->middleware('first');
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +24,7 @@ Route::get('/', [TestController::class, 'index']);
 /*Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/', [TestController::class, 'index']);
 Route::get('/test', [TestController::class, 'index']);
@@ -38,6 +42,6 @@ Route::get('/test/{room}/{id}', function ($room, $id) {
 Route::get('/test/{greeting?}', function ($greeting = 'Good morning') {
     return $greeting . 'おはようございま〜す';
 });
+
+Route::get('/middleware', [MiddlewareController::class, 'index'])->middleware('first');
 */
-
-
